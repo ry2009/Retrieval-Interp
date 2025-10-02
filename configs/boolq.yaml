@@ -1,0 +1,42 @@
+experiment_name: boolq_late_interaction
+seed: 321
+dataset:
+  name: boolq
+  split: validation
+  sample_size: 300
+retriever:
+  model_id: colbert-ir/colbertv2.0
+  max_length: 256
+  batch_size: 16
+  device: cuda
+llm:
+  model_id: mistralai/Mistral-7B-Instruct-v0.3
+  max_new_tokens: 64
+  temperature: 0.0
+  top_p: 0.9
+  device: cuda
+evaluation:
+  top_k: 1
+  max_context_tokens: 2000
+  output_dir: results/boolq_late_interaction
+interpretability:
+  store_token_matches: true
+  top_token_pairs: 5
+  heatmap_examples: 8
+verifier:
+  enabled: true
+  model_id: cross-encoder/nli-deberta-base
+  threshold: 0.3
+analysis:
+  enabled: true
+  failure_rules:
+    - name: unsupported_answer
+      condition: verifier_below_threshold
+    - name: span_mismatch
+      condition: contains_gold_string_is_false
+visualization:
+  enabled: true
+  output_dir: results/boolq_late_interaction/viz
+augmentation:
+  enabled: true
+  verifier_threshold: 0.3

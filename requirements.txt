@@ -1,0 +1,14 @@
+pyyaml>=6.0
+rich>=13.7
+openai>=1.46
+transformers>=4.44
+accelerate>=0.34
+colbert-ai==0.2.22
+faiss-cpu>=1.8
+uvicorn>=0.30
+fastapi>=0.111
+plotly>=5.24
+pandas>=2.0
+sentencepiece>=0.2.0
+protobuf>=4.25
+streamlit>=1.37
