@@ -1,6 +1,6 @@
 # LLM-Augmented Retrieval & Interpretability Workspace
 
-This workspace targets the Mixedbread research direction on LLM-augmented search with a focus on interpretability. It houses experiments, scripts, and documentation for coupling late-interaction retrievers with language-model reasoning layers and analyzing why retrieval succeeds or fails.
+This workspace targets the research direction on LLM-augmented search with a focus on interpretability. It houses experiments, scripts, and documentation for coupling late-interaction retrievers with language-model reasoning layers and analyzing why retrieval succeeds or fails.
 
 ## Layout
 - `src/` – Python modules for data loaders, retriever interfaces, LLM orchestration, and interpretability tooling.
